@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include <iostream>
+#include "TextureManager.h"
 
 Engine* Engine::s_Instance = nullptr;
 
@@ -19,11 +20,17 @@ bool Engine::Init()
             SDL_Log("Failed to create renderer: %s", SDL_GetError());
             return false;
     }
+    TextureManager::GetInstance()->Load("tree","assets/tree3.png");
     return m_IsRunning = true;
 }
 
 bool Engine::Clean()
 {
+    SDL_DestroyRenderer(m_Renderer);
+    SDL_DestroyWindow(m_Window);
+    IMG_Quit();
+    SDL_Quit();
+    TextureManager::GetInstance()->Clean();
     return true;
 }
 
@@ -37,6 +44,8 @@ void Engine::Render()
 {
     SDL_SetRenderDrawColor(m_Renderer,124,218,254,255);
     SDL_RenderClear(m_Renderer);
+
+    TextureManager::GetInstance()->Draw("tree",100,100,580,800);
     SDL_RenderPresent(m_Renderer);
 }
 
