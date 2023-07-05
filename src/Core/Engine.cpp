@@ -1,6 +1,6 @@
 #include "Engine.h"
-#include <iostream>
 #include "TextureManager.h"
+#include "Transform.h"
 
 Engine* Engine::s_Instance = nullptr;
 
@@ -21,7 +21,12 @@ bool Engine::Init()
             return false;
     }
     TextureManager::GetInstance()->Load("tree","assets/tree3.png");
+
+    Transform tf;
+    tf.Log();
+
     return m_IsRunning = true;
+
 }
 
 bool Engine::Clean()
@@ -37,7 +42,7 @@ bool Engine::Clean()
 
 void Engine::Update()
 {
-    SDL_Log("Ooof");
+    //SDL_Log("Ooof");
 }
 
 void Engine::Render()
