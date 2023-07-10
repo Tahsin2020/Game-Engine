@@ -5,22 +5,22 @@
 #include "Transform.h"
 
 struct Properties{
-public:
-    Properties(std:string textureID, float x, float y, int width, int height, SDL_RendererFlip flip=SDL_FLIP_NONE){
-        X=x;
-        Y=y;
-        Flip=flip;
-        TextureID=textureID;
-        Width=width;
-        Height=height;
-    }
+
+    public Properties(std:string textureID, float x, float y, int width, int height, SDL_RendererFlip flip=SDL_FLIP_NONE){
+            X=x;
+            Y=y;
+            Flip=flip;
+            TextureID=textureID;
+            Width=width;
+            Height=height;
+        }
 
     public:
-    std:string TextureID;
-    int Width, Height;
-    float X,Y;
-    SDL_RendererFlip Flip;
-};
+        std::string TextureID;
+        int Width, Height;
+        float X,Y;
+        SDL_RendererFlip Flip;
+}
 
 class GameObject : public IObject
 {
@@ -37,12 +37,11 @@ class GameObject : public IObject
 
     protected:
 
-    Transform* m_Transform;
-    int m_Width, m_Height;
-    std:string m_TextureID;
-    SDL_RendererFlip m_Flip;
+        Transform* m_Transform;
+        int m_Width, m_Height;
+        std:string m_TextureID;
+        SDL_RendererFlip m_Flip;
 
-    private:
 };
 
 #endif // GAMEOBJECT_H
