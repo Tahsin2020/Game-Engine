@@ -5,8 +5,11 @@
 class Warrior: public Character
 {
     public:
-        Warrior();
-        virtual ~Warrior();
+        Warrior(Properties props);
+
+        virtual void Draw();
+        virtual void Clean();
+        virtual void Update(float dt);
 
     protected:
 

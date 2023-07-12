@@ -1,11 +1,22 @@
 #include "Warrior.h"
+#include "TextureManager.h"
 
-Warrior::Warrior()
+Warrior::Warrior(Properties props)
 {
-    //ctor
+
 }
 
-Warrior::~Warrior()
+void Warrior::Draw()
 {
-    //dtor
+
+}
+
+void Warrior::Clean()
+{
+
+}
+
+void Warrior::Update(float dt)
+{
+    d
 }
